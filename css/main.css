@@ -1,0 +1,417 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4; }
+
+body {
+  text-align: center;
+  background-color: #aad9bd;
+  font-family: "jubilat", sans-serif; }
+
+p {
+  margin: 0; }
+
+button {
+  color: #222; }
+
+input {
+  color: #222; }
+
+select {
+  color: #222; }
+
+textarea {
+  color: #222;
+  resize: vertical; }
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+audio {
+  vertical-align: middle; }
+
+canvas {
+  vertical-align: middle; }
+
+img {
+  vertical-align: middle; }
+
+video {
+  vertical-align: middle; }
+
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden; }
+  .ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%; }
+
+.clearfix:before {
+  content: " ";
+  display: table; }
+.clearfix:after {
+  content: " ";
+  display: table;
+  clear: both; }
+
+/*----------------------------------------------------------------------------------- */
+/*  Styles */
+/*----------------------------------------------------------------------------------- */
+@-webkit-keyframes pegspin {
+  from {
+    -webkit-transform: rotateY(0); }
+  to {
+    -webkit-transform: rotateY(360deg); } }
+@-moz-keyframes pegspin {
+  from {
+    -moz-transform: rotateY(0); }
+  to {
+    -moz-transform: rotateY(360deg); } }
+@keyframes pegspin {
+  from {
+    -webkit-transform: rotateY(0);
+    -moz-transform: rotateY(0);
+    -ms-transform: rotateY(0);
+    -o-transform: rotateY(0);
+    transform: rotateY(0); }
+  to {
+    -webkit-transform: rotateY(360deg);
+    -moz-transform: rotateY(360deg);
+    -ms-transform: rotateY(360deg);
+    -o-transform: rotateY(360deg);
+    transform: rotateY(360deg); } }
+.part-1 {
+  background: url(../images/bg-pattern.jpg) repeat center center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  -webkit-animation-delay: 0.2s;
+  -moz-animation-delay: 0.2s;
+  animation-delay: 0.2s; }
+  .part-1 .loading {
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    top: 50%;
+    margin-top: -75px;
+    opacity: 1;
+    -webkit-perspective: 300px;
+    -moz-perspective: 300px;
+    perspective: 300px;
+    -webkit-transition: opacity 0.25s linear;
+    -moz-transition: opacity 0.25s linear;
+    transition: opacity 0.25s linear; }
+    .part-1 .loading img {
+      -webkit-animation: pegspin infinite 1s linear;
+      -moz-animation: pegspin infinite 1s linear;
+      animation: pegspin infinite 1s linear; }
+    .part-1 .loading p {
+      font-style: italic;
+      color: #ed1c24;
+      font-weight: 600;
+      text-shadow: 0px 2px #fff, 0px -2px #fff, 2px 0 #fff, -2px 0 #fff, 0px 6px 6px rgba(12, 68, 36, 0.3);
+      margin-top: 25px; }
+  .part-1 .game {
+    display: table-cell;
+    vertical-align: middle; }
+    .part-1 .game p {
+      font-size: 16px;
+      font-style: italic;
+      line-height: 1;
+      font-weight: 400;
+      color: #fff;
+      width: 348px;
+      height: 51px;
+      display: block;
+      background: url(../images/ribbon.png) no-repeat center center;
+      padding-top: 11px;
+      margin: -40px auto 100px;
+      position: relative;
+      z-index: 20;
+      display: none; }
+    .part-1 .game .holidays {
+      display: none; }
+    .part-1 .game .happy {
+      margin-bottom: 25px; }
+      .part-1 .game .happy > div {
+        cursor: pointer;
+        position: relative;
+        display: none; }
+        .part-1 .game .happy > div img {
+          vertical-align: top;
+          position: relative;
+          z-index: 10;
+          -webkit-animation-duration: 0.4s;
+          -moz-animation-duration: 0.4s;
+          animation-duration: 0.4s; }
+        .part-1 .game .happy > div:after {
+          content: "";
+          background-color: #fff;
+          display: block;
+          width: 4px;
+          position: absolute;
+          height: 600%;
+          box-shadow: 20px 25px 10px rgba(12, 68, 36, 0.25); }
+        .part-1 .game .happy > div:before {
+          content: "";
+          width: 74px;
+          height: 74px;
+          display: block;
+          background: url(../images/star.png) no-repeat center center;
+          position: absolute;
+          top: -84px;
+          left: 50%;
+          margin-left: -52px;
+          z-index: 40;
+          opacity: 0;
+          -webkit-transition: opacity 0.2s linear;
+          -moz-transition: opacity 0.2s linear;
+          transition: opacity 0.2s linear; }
+        .part-1 .game .happy > div.selected:before {
+          opacity: 1; }
+        .part-1 .game .happy > div.h img {
+          margin: 20px 0 0 0; }
+        .part-1 .game .happy > div.h:after {
+          bottom: 80%;
+          left: 60px; }
+        .part-1 .game .happy > div.h:before {
+          top: -54px;
+          margin-left: -38px; }
+        .part-1 .game .happy > div.a img {
+          margin: 40px 0 0 -35px; }
+        .part-1 .game .happy > div.a:after {
+          bottom: 80%;
+          left: 70px; }
+        .part-1 .game .happy > div.a:before {
+          top: -44px;
+          margin-left: -48px; }
+        .part-1 .game .happy > div.p1 img {
+          margin: 0px 0 0 -25px; }
+        .part-1 .game .happy > div.p1:after {
+          bottom: 85%;
+          left: 50px; }
+        .part-1 .game .happy > div.p2 img {
+          margin: 90px 0 0 -65px; }
+        .part-1 .game .happy > div.p2:after {
+          bottom: 65%;
+          left: 5px; }
+        .part-1 .game .happy > div.p2:before {
+          top: 4px;
+          margin-left: -80px; }
+        .part-1 .game .happy > div.y img {
+          margin: 5px 0 0 -50px; }
+        .part-1 .game .happy > div.y:after {
+          bottom: 70%;
+          left: 20px; }
+        .part-1 .game .happy > div.y:before {
+          top: -50px;
+          margin-left: -78px; }
+  .part-1.active .loading {
+    opacity: 0; }
+  .part-1.active .game .happy > div {
+    -webkit-animation-name: bounceInDown;
+    -moz-animation-name: bounceInDown;
+    animation-name: bounceInDown;
+    display: inline-block; }
+    .part-1.active .game .happy > div.h {
+      -webkit-animation-delay: 0.3s;
+      -moz-animation-delay: 0.3s;
+      animation-delay: 0.3s; }
+    .part-1.active .game .happy > div.a {
+      -webkit-animation-delay: 0.1s;
+      -moz-animation-delay: 0.1s;
+      animation-delay: 0.1s; }
+    .part-1.active .game .happy > div.p1 {
+      -webkit-animation-delay: 0.4s;
+      -moz-animation-delay: 0.4s;
+      animation-delay: 0.4s; }
+    .part-1.active .game .happy > div.p2 {
+      -webkit-animation-delay: 0.2s;
+      -moz-animation-delay: 0.2s;
+      animation-delay: 0.2s; }
+    .part-1.active .game .happy > div.y {
+      -webkit-animation-delay: 0.6s;
+      -moz-animation-delay: 0.6s;
+      animation-delay: 0.6s; }
+  .part-1.active .game p, .part-1.active .game .holidays {
+    -webkit-animation-delay: 0.9s;
+    -moz-animation-delay: 0.9s;
+    animation-delay: 0.9s;
+    display: inline-block; }
+  .part-1.active .game p {
+    -webkit-animation-name: bounceInDown;
+    -moz-animation-name: bounceInDown;
+    animation-name: bounceInDown; }
+  .part-1.active .game .holidays {
+    -webkit-animation-name: bounceInUp;
+    -moz-animation-name: bounceInUp;
+    animation-name: bounceInUp; }
+
+.part-2 {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  color: #fff;
+  position: relative;
+  display: table; }
+  .part-2 .frost {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 20; }
+    .part-2 .frost > div {
+      position: absolute;
+      display: block; }
+      .part-2 .frost > div.frost-tl, .part-2 .frost > div.frost-tr, .part-2 .frost > div.frost-br, .part-2 .frost > div.frost-bl {
+        width: 200px;
+        height: 200px; }
+      .part-2 .frost > div.frost-tl {
+        background: url(../images/frost-tl.png) no-repeat 0 0;
+        top: 0;
+        left: 0; }
+      .part-2 .frost > div.frost-tr {
+        background: url(../images/frost-tr.png) no-repeat 0 0;
+        top: 0;
+        right: 0; }
+      .part-2 .frost > div.frost-bl {
+        background: url(../images/frost-bl.png) no-repeat 0 0;
+        bottom: 0;
+        left: 0; }
+      .part-2 .frost > div.frost-br {
+        background: url(../images/frost-br.png) no-repeat 0 0;
+        bottom: 0;
+        right: 0; }
+      .part-2 .frost > div.frost-l {
+        background: url(../images/frost-l.png) repeat-y 0 0;
+        top: 200px;
+        bottom: 200px;
+        left: 0;
+        width: 200px; }
+      .part-2 .frost > div.frost-r {
+        background: url(../images/frost-r.png) repeat-y 0 0;
+        top: 200px;
+        bottom: 200px;
+        right: 0;
+        width: 200px; }
+      .part-2 .frost > div.frost-t {
+        background: url(../images/frost-t.png) repeat-x 0 0;
+        left: 200px;
+        right: 200px;
+        top: 0;
+        height: 200px; }
+      .part-2 .frost > div.frost-b {
+        background: url(../images/frost-b.png) repeat-x 0 0;
+        left: 200px;
+        right: 200px;
+        bottom: 0;
+        height: 200px; }
+  .part-2 .content {
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+    z-index: 10; }
+    .part-2 .content h1 {
+      font-weight: 200;
+      text-transform: uppercase;
+      text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+      letter-spacing: 0.2em;
+      font-size: 2.2em;
+      margin-top: 0; }
+      .part-2 .content h1 span {
+        opacity: 0; }
+    .part-2 .content h2 {
+      font-weight: 200;
+      text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+      font-size: 1.6em;
+      letter-spacing: 0.05em;
+      margin-top: -260px;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 20;
+      opacity: 0; }
+    .part-2 .content img {
+      margin-left: -160px;
+      opacity: 0;
+      -webkit-transform: translate(-120px, 350px);
+      -moz-transform: translate(-120px, 350px);
+      -ms-transform: translate(-120px, 350px);
+      -o-transform: translate(-120px, 350px);
+      transform: translate(-120px, 350px);
+      -webkit-transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1.4s, opacity 0.5s linear 1.4s;
+      -moz-transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1.4s, opacity 0.5s linear 1.4s;
+      transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1.4s, opacity 0.5s linear 1.4s; }
+    .part-2 .content h3 {
+      width: 460px;
+      height: 108px;
+      display: inline-block;
+      margin: 0 auto;
+      text-align: left;
+      position: relative;
+      z-index: 20; }
+      .part-2 .content h3 span {
+        background: url(../images/redpeg-marketing.png) no-repeat 0 0;
+        width: 0%;
+        height: 108px;
+        display: inline-block;
+        text-indent: -9999em;
+        text-align: left;
+        -webkit-transition: width 0.7s linear 3.5s;
+        -moz-transition: width 0.7s linear 3.5s;
+        transition: width 0.7s linear 3.5s; }
+  .part-2 video#bgvid {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    background-size: cover;
+    opacity: 0.75;
+    -webkit-filter: blur(14px) saturate(130%);
+    filter: blur(14px) saturate(130%); }
+  .part-2.active .content img {
+    -webkit-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+    opacity: 1; }
+  .part-2.active .content h2 {
+    -webkit-animation-name: flipInY;
+    -moz-animation-name: flipInY;
+    animation-name: flipInY;
+    -webkit-animation-delay: 2.4s;
+    -moz-animation-delay: 2.4s;
+    animation-delay: 2.4s;
+    opacity: 1; }
+  .part-2.active .content h3 span {
+    width: 100%; }
+
+/*# sourceMappingURL=main.css.map */
